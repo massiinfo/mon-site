@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrousel CSS Sans JS</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      margin: 40px auto;
+      overflow: hidden;
+    }
+    /* Masquer les boutons radio */
+    .carousel input {
+      display: none;
+    }
+    /* Conteneur des slides */
+    .slides {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    /* Chaque slide */
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* Affichage de la slide active */
+    #slide1:checked ~ .slides .s1,
+    #slide2:checked ~ .slides .s2,
+    #slide3:checked ~ .slides .s3,
+    #slide4:checked ~ .slides .s4 {
+      opacity: 1;
+      z-index: 1;
+    }
+    /* Flèches de navigation */
+    .nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+    .nav label {
+      pointer-events: all;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 2em;
+      padding: 10px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.3s;
+    }
+    .nav label:hover {
+      background: rgba(0, 0, 0, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel">
+    <!-- Boutons radio pour contrôler le slide actif -->
+    <input type="radio" name="carousel" id="slide1" checked>
+    <input type="radio" name="carousel" id="slide2">
+    <input type="radio" name="carousel" id="slide3">
+    <input type="radio" name="carousel" id="slide4">
+    
+    <div class="slides">
+      <!-- Slide 1 -->
+      <div class="slide s1">
+        <img src="img/1.jpg" alt="Slide 1">
+        <div class="nav">
+          <!-- Pour Slide 1 : flèche gauche mène à la dernière slide et droite à la slide 2 -->
+          <label for="slide4" class="prev">&#10094;</label>
+          <label for="slide2" class="next">&#10095;</label>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide s2">
+        <img src="img/2.jpg" alt="Slide 2">
+        <div class="nav">
+          <label for="slide1" class="prev">&#10094;</label>
+          <label for="slide3" class="next">&#10095;</label>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide s3">
+        <img src="img/1.jpg" alt="Slide 3">
+        <div class="nav">
+          <label for="slide2" class="prev">&#10094;</label>
+          <label for="slide4" class="next">&#10095;</label>
+        </div>
+      </div>
+      <!-- Slide 4 -->
+      <div class="slide s4">
+        <img src="img/2.jpg" alt="Slide 4">
+        <div class="nav">
+          <label for="slide3" class="prev">&#10094;</label>
+          <label for="slide1" class="next">&#10095;</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+.carousel {
+    position: relative;
+    width: 600px;    /* Largeur du carrousel */
+    height: 400px;   /* Hauteur du carrousel */
+    overflow: hidden;
+    margin: auto;
+  }
+  
+  /* Masquer les boutons radio */
+  .carousel input {
+    display: none;
+  }
+  
+  /* Conteneur des slides alignées horizontalement */
+  .slides {
+    display: flex;
+    width: 300%;    /* 3 slides => 3 x 100% */
+    transition: transform 0.5s ease;
+  }
+  
+  /* Chaque slide prend la largeur du carrousel */
+  .slide {
+    width: 100%;
+    position: relative;
+  }
+  
+  /* Positionnement et style des flèches */
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /* Positionnement des flèches à gauche et à droite */
+  .prev {
+    left: 10px;
+  }
+  .next {
+    right: 10px;
+  }
+  
+  /* Modification du conteneur en fonction du bouton radio sélectionné */
+  #slide1:checked ~ .slides {
+    transform: translateX(0);
+  }
+  #slide2:checked ~ .slides {
+    transform: translateX(-100%);
+  }
+  #slide3:checked ~ .slides {
+    transform: translateX(-200%);
+  }
+  
