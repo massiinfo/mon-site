@@ -1,0 +1,58 @@
+<!-- Début du document HTML -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Définition du jeu de caractères -->
+  <meta charset="UTF-8">
+  <!-- Configuration de l'affichage pour les appareils mobiles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Titre de la page -->
+  <title>Carrousel Responsive</title>
+  </head>
+<body>
+  <!-- Conteneur principal du carrousel -->
+  <div class="carousel">
+    <!-- Boutons radio pour sélectionner les diapositives -->
+    <input type="radio" name="carousel" id="slide1" checked>
+    <input type="radio" name="carousel" id="slide2">
+    <input type="radio" name="carousel" id="slide3">
+    <input type="radio" name="carousel" id="slide4">
+    
+    <!-- Conteneur des diapositives -->
+    <div class="slides">
+      <div class="slide s1">
+        <img src="img/01.jpg" alt="Slide 1">
+        <div class="nav">
+          <label for="slide4" class="prev">&#10094;</label>
+          <label for="slide2" class="next">&#10095;</label>
+        </div>
+      </div>
+
+      <div class="slide s2">
+        <img src="img/02.jpg" alt="Slide 2">
+        <div class="nav">
+          <label for="slide1" class="prev">&#10094;</label>
+          <label for="slide3" class="next">&#10095;</label>
+        </div>
+      </div>
+
+      <div class="slide s3">
+        <img src="img/01.jpg" alt="Slide 3">
+        <div class="nav">
+          <label for="slide2" class="prev">&#10094;</label>
+          <label for="slide4" class="next">&#10095;</label>
+        </div>
+      </div>
+
+      <div class="slide s4">
+        <img src="img/02.jpg" alt="Slide 4">
+        <div class="nav">
+          <label for="slide3" class="prev">&#10094;</label>
+          <label for="slide1" class="next">&#10095;</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </body>
+</html>
